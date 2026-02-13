@@ -4,6 +4,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    background-color: #FFF0F0;
 
 }
 
@@ -14,12 +15,18 @@ body {
     display: flex;
     flex-direction: column;
     padding: 1rem;
+    background-color: white;
 
     
 }
 
+body {
+    font-family: 'Courier New', monospace 
+}
+
 button {
     background-color: transparent;
+    font-family: 'Courier New', monospace 
     
   
   
@@ -32,6 +39,9 @@ button {
     border-style:  solid; 
   }
   
+.text-center {
+    text-align: center;
+}
 
 img {
     width: auto;
