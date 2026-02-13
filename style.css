@@ -1,0 +1,86 @@
+body {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.center {
+    width: 200px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+
+    
+}
+
+img {
+    width: auto;
+    height: 200px;
+}
+
+.row {
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    display: flex;
+    gap: 1rem
+}
+
+
+    .pink-love {
+    border-image:  url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACoAAAAqCAYAAADFw8lbAAABNElEQVRYR91XSRKDMAyDS7/Rj/T5/Ui/0UsZDu5M3fFIXhIw3CAEC1mWnXVpcq1NcC5foO/787ODvr0eP+Ct5/KDsi73st96rolh4/YDihiKMqG/qzPGxv3TaHXKTgvUKs6o1uV75YwOB8pWH6tVb8qR25RVPSoS77omjjZ8VmPaR70ALelcD2hWc+z+NKNsIK9E2FkjbE9sAPY91Gj6AY36KMuYtxGY9tQeKFtEXma9RQc70+mAsoAQE4hZtN9aN6u+qvVVDTH9Uh9NCUq115YsCUJG0Q9EgaKa6O+j7GkwyyCSgqzrYu7X61mmkGaz69ebR5GG2EZQzWy/M1N0zMsyx8ZNG/50oF4fRQCjw0i5j7YHymrOYnwao8OBVgdA5/Tp05MFaBhQttcf9R7dmY4CKHE3H/yASRuQ1HQAAAAASUVORK5CYII=') 14 /  14px / 0 round;
+    border-width:  14px;
+    border-style:  solid; 
+  }
+  
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0) scale(var(--scale, 1)); }
+    25% { transform: translateX(-10px) scale(var(--scale, 1)); }
+    75% { transform: translateX(10px) scale(var(--scale, 1)); }
+}
+
+
+.confetti {
+    position: fixed;
+    width: 10px;
+    height: 10px;
+    top: -10px;
+    z-index: 9999;
+    animation: confetti-fall linear forwards;
+}
+
+@keyframes confetti-fall {
+    to {
+        transform: translateY(100vh) rotate(720deg);
+        opacity: 0;
+    }
+}
+
+.emoji {
+    position: fixed;
+    top: 50%;
+    z-index: 9999;
+    animation: emoji-float ease-out forwards;
+    pointer-events: none;
+}
+
+@keyframes emoji-float {
+    0% {
+        transform: translateY(0) rotate(0deg) scale(0);
+        opacity: 1;
+    }
+    50% {
+        transform: translateY(-30vh) rotate(180deg) scale(1.5);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-60vh) rotate(360deg) scale(0.5);
+        opacity: 0;
+    }
+}

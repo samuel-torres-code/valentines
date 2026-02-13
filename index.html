@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Question</title>
+    <link rel="stylesheet" href="style.css"> 
+</head>
+<body>
+    <div class="center pink-love">
+            <img src="us.PNG" />
+            <p>
+                Will You Be My Valentine?
+
+            </p>
+            <div class="row">
+                <button> Yes </button>
+                <button> No</button>
+            </div>
+
+    </div>
+    <script>
+const noButton = document.querySelectorAll('button')[1];
+const yesButton = document.querySelectorAll('button')[0];
+let noClickCount = 0;
+
+const sadMessages = [
+    "Are you sure? 🥺",
+    "Stop messing around...🦫",
+    "PLEASE PLEASE PLEASE"
+];
+
+noButton.addEventListener('click', (e) => {
+    e.preventDefault();
+    noClickCount++;
+    
+    // Move the button
+    const maxX = window.innerWidth - noButton.offsetWidth;
+    const maxY = window.innerHeight - noButton.offsetHeight;
+    
+    const randomX = Math.floor(Math.random() * maxX);
+    const randomY = Math.floor(Math.random() * maxY);
+    
+    noButton.style.position = 'fixed';
+    noButton.style.left = randomX + 'px';
+    noButton.style.top = randomY + 'px';
+    
+    // Change the message
+    if (noClickCount <= sadMessages.length) {
+        document.querySelector('p').textContent = sadMessages[noClickCount - 1];
+    }
+    
+    // Make Yes button bigger each time
+    const currentSize = 1 + (noClickCount * 0.2);
+    yesButton.style.transform = `scale(${currentSize})`;
+    yesButton.style.transition = 'transform 0.3s ease';
+    
+    // Make No button smaller
+    const noSize = Math.max(0.4, 1 - (noClickCount * 0.05));
+    noButton.style.transform = `scale(${noSize})`;
+    noButton.style.transition = 'transform 0.3s ease';
+    
+    // Add shake animation to No button
+    noButton.style.animation = 'shake 0.5s';
+    setTimeout(() => {
+        noButton.style.animation = '';
+    }, 500);
+});
+
+// Yes button celebration!
+yesButton.addEventListener('click', (e) => {
+    e.preventDefault();
+    
+    // Change message
+    document.querySelector('p').textContent = "YAY! I KNEW IT! EVERY DAY IS A NEW ADVENTURE WITH YOU AND I DONT WANT TO DO IT WITH ANYONE ELSE. I LOVE YOU SO MUCH IT MAKES ME WANT TO EXPLODE. YOUR KISSES ARE HEAVEN AND YOUR VOICE IS MY FAVORITE SONG. I AM LUCKY TO HAVE EARNED ANOTHER YEAR WITH THE BEST THING IN MY LIFE. HAPPY VALENTINES DAY!!!!!!";
+    
+    // Hide No button
+    noButton.style.display = 'none';
+    yesButton.textContent = "💖"
+    yesButton.style.transform = `scale(1rem)`;
+    yesButton.style.transition = 'transform 0.3s ease';
+    
+    // Create confetti and emoji explosion
+    createConfetti();
+    createEmojiExplosion();
+});
+
+// Confetti function
+function createConfetti() {
+    const colors = ['#ff0000', '#ff69b4', '#ff1493', '#ff00ff', '#ff6b9d'];
+    
+    for (let i = 0; i < 100; i++) {
+        setTimeout(() => {
+            const confetti = document.createElement('div');
+            confetti.className = 'confetti';
+            confetti.style.left = Math.random() * 100 + 'vw';
+            confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+            confetti.style.animationDuration = (Math.random() * 3 + 2) + 's';
+            confetti.style.animationDelay = Math.random() * 0.5 + 's';
+            document.body.appendChild(confetti);
+            
+            setTimeout(() => confetti.remove(), 5000);
+        }, i * 30);
+    }
+}
+
+// Emoji explosion function
+function createEmojiExplosion() {
+    const emojis = ['❤️', '💕', '💖', '💗', '💓', '💝', '💘', '😍', '🥰', '😘', '💋', '🌹'];
+    
+    for (let i = 0; i < 30; i++) {
+        setTimeout(() => {
+            const emoji = document.createElement('div');
+            emoji.className = 'emoji';
+            emoji.textContent = emojis[Math.floor(Math.random() * emojis.length)];
+            emoji.style.left = Math.random() * 100 + 'vw';
+            emoji.style.fontSize = (Math.random() * 30 + 20) + 'px';
+            emoji.style.animationDuration = (Math.random() * 2 + 3) + 's';
+            document.body.appendChild(emoji);
+            
+            setTimeout(() => emoji.remove(), 5000);
+        }, i * 50);
+    }
+}
+</script>
+</body>
+
+</html>
