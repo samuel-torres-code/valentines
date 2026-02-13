@@ -18,6 +18,21 @@ body {
     
 }
 
+button {
+    background-color: transparent;
+    
+  
+  
+  
+}
+
+    .heart {
+    border-image:  url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACoAAAAqCAYAAADFw8lbAAABc0lEQVR4AeyWC2oDMQxE3Ryj9z9br9HywC8YgVl7m00ytIFhrJHslWY/5Nb676u17xFdbqPGWn3G1IBZXp2aEUf6vVEL35VvTlUbXNWtkz9b+wDGcuu/Gnf5fueMZetzHLXzs4x7Izxn1Firn+W/4+hZh3b35TjK8wNWJ6QWrNbXOvaCqs9iakGOo05C18C4MjlQ9bMxZ4HZfnLAfJ6jds4UYBarP4q5FvA81sBYznXUCZgKGF/NXAvMrpPnqP9SZhM9W6/95Dn6bMd2r5fjqM8CbxzYnfSqenoB9pfjKF0DO7/Kod1z7YfeQI6ji5O+vCzPUZ4D8HLregP0AnrY8hz1LZOdxFhW/y17nux5xrJ6jqO1cyfY1d13xLvnWp/j6JED75L/d/TRdyLHUb7+YNUBasFqfa1jL6j6LKYW5DjqJHQNjCuTA1X3OyebN5bVZc4CxpXJAfU8R+2cKcAsVpepHaGDo8ba+srkgDprYCzHOPoDAAD//1Yg7+8AAAAGSURBVAMABU2vs4IJx98AAAAASUVORK5CYII=') 14 /  14px / 0 round;
+    border-width:  14px;
+    border-style:  solid; 
+  }
+  
+
 img {
     width: auto;
     height: 200px;

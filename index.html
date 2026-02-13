@@ -14,7 +14,7 @@
 
             </p>
             <div class="row">
-                <button> Yes </button>
+                <button class="heart"> Yes </button>
                 <button> No</button>
             </div>
 
@@ -77,7 +77,7 @@ yesButton.addEventListener('click', (e) => {
     // Hide No button
     noButton.style.display = 'none';
     yesButton.textContent = "💖"
-    yesButton.style.transform = `scale(1rem)`;
+    yesButton.style.transform = `scale(1)`;
     yesButton.style.transition = 'transform 0.3s ease';
     
     // Create confetti and emoji explosion
